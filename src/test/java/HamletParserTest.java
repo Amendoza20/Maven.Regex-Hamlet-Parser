@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,10 +16,27 @@ public class HamletParserTest {
 
     @Test
     public void testChangeHamletToLeon() {
+        String hamlet = "This is Hamlet";
+        String expected = "This is Leon";
+        Converter convert = new Converter(hamlet);
+
+        convert.replace(hamlet,expected);
+        String actual = convert.toString();
+
+        Assert.assertEquals(expected,actual);
+
     }
 
     @Test
     public void testChangeHoratioToTariq() {
+        String haratio = "This is Horatio";
+        String expected = "This is Tarig";
+        Converter convert = new Converter(haratio);
+
+        convert.replace(haratio,expected);
+        String actual = convert.toString();
+
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
